@@ -1,0 +1,7 @@
+version: "3"
+services:
+  travel-app:
+    image: YOUR_DOCKERHUB_USERNAME/travel-app:latest
+    ports:
+      - "8081:8081"
+    restart: unless-stopped
