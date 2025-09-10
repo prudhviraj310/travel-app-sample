@@ -60,7 +60,7 @@ pipeline {
     }
     post {
         always {
-            node {
+            steps {
                 archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
             }
         }
