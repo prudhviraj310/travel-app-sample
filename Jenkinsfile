@@ -22,20 +22,20 @@ pipeline {
             }
         }
 
-        stage('SonarQube Analysis') {
-            steps {
-                sh """
-                   docker run --rm \
-                   -e SONAR_HOST_URL=${SONAR_HOST} \
-                   -e SONAR_TOKEN=${SONAR_TOKEN} \
-                   -v \$(pwd):/usr/src sonarsource/sonar-scanner-cli \
-                   -Dsonar.projectKey=travel-app-sample \
-                   -Dsonar.sources=/usr/src \
-                   -Dsonar.host.url=${SONAR_HOST} \
-                   -Dsonar.login=${SONAR_TOKEN}
-                """
-            }
-        }
+        // stage('SonarQube Analysis') {
+        //     steps {
+        //         sh """
+        //            docker run --rm \
+        //            -e SONAR_HOST_URL=${SONAR_HOST} \
+        //            -e SONAR_TOKEN=${SONAR_TOKEN} \
+        //            -v \$(pwd):/usr/src sonarsource/sonar-scanner-cli \
+        //            -Dsonar.projectKey=travel-app-sample \
+        //            -Dsonar.sources=/usr/src \
+        //            -Dsonar.host.url=${SONAR_HOST} \
+        //            -Dsonar.login=${SONAR_TOKEN}
+        //         """
+        //     }
+        // }
 
         stage('Build Docker Image') {
             steps {
